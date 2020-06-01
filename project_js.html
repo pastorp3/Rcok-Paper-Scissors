@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<p></p>
+<script>
+    const options=["Rock","Paper","Scissors"];
+    
+    function computerPlay(){
+        let random=options[Math.floor(Math.random()*options.length)];
+        return random
+    }
+
+    function playerSelection(){
+        let choise = prompt("Rock,Paper or Scissors?? ")
+        return choise
+    }
+
+    function round(){
+        let comp=computerPlay();
+        let player=playerSelection();
+
+        console.log(player,comp);
+        if (player===comp){
+            alert("Tie");
+        }else if ((player==="Rock")&&(comp==="Scissors")){
+            alert("Winner");
+        }else if((player==="Paper")&&(comp==="Rock")){
+            alert("Winner");
+        }else if((player==="Scissors")&&(comp==="Paper")){
+            alert("Winner");
+        }else if((player==="Rock")&&(comp==="Paper")){
+            alert("Lose");
+        }else if((player==="Paper")&&(comp==="Scissors")){
+            alert("Lose");
+        }else if ((player==="Scissors")&&(comp==="Rock")){
+            alert("Lose");
+        }
+    }
+
+    function game(){
+        let lives=5;
+        while(lives!=0){
+            round();
+            lives=lives-1;
+            console.log("You have:",lives,"lives");
+        }
+    }
+    
+    console.log(game());
+    
+
+
+</script>
+</body>
+</html>
